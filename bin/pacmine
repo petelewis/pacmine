@@ -17,6 +17,7 @@ command :list do |c|
   c.syntax = 'pacmine list [user]'
   c.description = "List the packages maintained by the specified user. Defaults to 'orphan'."
   c.option '--file <filename>', String, 'Query the specified file instead of archlinux.org.'
+  c.option '--repo <repository>', String, 'Only consider packages from the specified repository.'
   c.action do |args, options|
 
     # Set the to be the maintainer to pull packages for.
@@ -38,6 +39,11 @@ command :list do |c|
     else
       # Pull package list page from archlinux.org for given user
       packages = get_package_list args[0]
+    end
+
+    # Do any filtering we were asked to do
+    if options.repo
+      packages = filter_by_repo(packages, options.repo)
     end
 
     # And print out the repo and package names

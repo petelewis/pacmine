@@ -63,3 +63,11 @@ def get_package_list maintainer, file=nil
   packages.uniq
 
 end
+
+# This method takes an array of packages and filters it by repo.
+# Another package array is returned, with only those packages in 'repo' present.
+def filter_by_repo(packages, repo)
+
+  packages.keep_if { |package| package[:repo] === repo }
+
+end
