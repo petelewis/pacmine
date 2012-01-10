@@ -16,6 +16,8 @@
 
   pacmine list aaron
   pacmine list orphan
+  pacmine list plewis --repo community
+  pacmine list orphan --filter "kde"
 
 == REQUIREMENTS:
 
