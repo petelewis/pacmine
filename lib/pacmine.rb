@@ -71,3 +71,12 @@ def filter_by_repo(packages, repo)
   packages.keep_if { |package| package[:repo] === repo }
 
 end
+
+# This method takes an array of packages and filters it by name.
+# Another package array is returned, with only those packages whose name matches
+# the regular expression given.
+def filter_by_name(packages, regexp)
+
+  packages.keep_if { |package| package[:pkgname].match(regexp) }
+
+end

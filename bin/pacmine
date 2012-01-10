@@ -21,6 +21,7 @@ command :list do |c|
   c.description = "List packages."
   c.option '--file <filename>', String, 'Query the specified file instead of searching on archlinux.org/packages.'
   c.option '--repo <repository>', String, 'Only consider packages from the specified repository.'
+  c.option '--filter <regexp>', String, 'Only consider packages whose name match the regular expression.'
   c.action do |args, options|
 
     # Set this to be the maintainer to pull packages for.
@@ -47,6 +48,9 @@ command :list do |c|
     # Do any filtering we were asked to do
     if options.repo
       packages = filter_by_repo(packages, options.repo)
+    end
+    if options.filter
+      packages = filter_by_name(packages, options.filter)
     end
 
     # And print out the repo and package names
