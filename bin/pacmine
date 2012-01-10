@@ -23,7 +23,7 @@ command :list do |c|
   c.option '--repo <repository>', String, 'Only consider packages from the specified repository.'
   c.action do |args, options|
 
-    # Set the to be the maintainer to pull packages for.
+    # Set this to be the maintainer to pull packages for.
     if args[0]
       maintainer = args[0]
     else
