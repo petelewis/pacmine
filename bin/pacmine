@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'commander/import'
+require 'pacmine'
+
+# For rubygems
+VERSION = '0.0.1'
+
+# For commander
+program :version, '0.0.1'
+program :description, "A tool to get a list of someone's packages from archlinux.org"
+
+# Default to the intro / help page
+default_command :help
+
+command :list do |c|
+  c.syntax = 'pacmine list [user]'
+  c.description = "List the packages maintained by the specified user. Defaults to 'orphan'."
+  c.option '--file <filename>', String, 'Query the specified file instead of archlinux.org.'
+  c.action do |args, options|
+
+    # Set the to be the maintainer to pull packages for.
+    if args[0]
+      maintainer = args[0]
+    else
+      maintainer = "orphan"
+    end
+
+    # If we've been passed a --file <filename>, then query that instead of the
+    # archlinux.org server.
+    if options.file
+      if args[0]
+        warn "It doesn't make sense to specify a user when using --file."
+        exit 1
+      end
+      # Get the package list from the given file - no user needed
+      packages = get_package_list nil, options.file
+    else
+      # Pull package list page from archlinux.org for given user
+      packages = get_package_list args[0]
+    end
+
+    # And print out the repo and package names
+    packages.each { |package| puts "#{package[:repo]} #{package[:pkgname]}" }
+
+  end
+end
