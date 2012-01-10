@@ -1,6 +1,6 @@
 = pacmine
 
-* http://pacmine.somewhere
+* https://rubygems.org/gems/pacmine
 
 == DESCRIPTION:
 
@@ -24,7 +24,7 @@
 == INSTALL:
 
 * If you have rubygems set up: gem install pacmine
-* Or from the AUR: [link to follow]
+* Or from the AUR: https://aur.archlinux.org/packages.php?ID=55713
 
 == LICENSE:
 
