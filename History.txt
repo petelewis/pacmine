@@ -4,3 +4,7 @@
 
   * Queries archlinux.org for a maintainer's packages.
 
+=== 0.0.2 / 2012-01-10
+
+* Add ability to filter results by repository and package name.
+
