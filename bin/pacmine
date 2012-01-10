@@ -14,9 +14,12 @@ program :description, "A tool to get a list of someone's packages from archlinux
 default_command :help
 
 command :list do |c|
-  c.syntax = 'pacmine list [user]'
-  c.description = "List the packages maintained by the specified user. Defaults to 'orphan'."
-  c.option '--file <filename>', String, 'Query the specified file instead of archlinux.org.'
+  c.syntax = "pacmine list [user]
+
+    List packages maintained by a particular user. Defaults to 'orphan'."
+
+  c.description = "List packages."
+  c.option '--file <filename>', String, 'Query the specified file instead of searching on archlinux.org/packages.'
   c.option '--repo <repository>', String, 'Only consider packages from the specified repository.'
   c.action do |args, options|
 
