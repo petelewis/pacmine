@@ -15,6 +15,7 @@
 == SYNOPSIS:
 
   pacmine list aaron
+  pacmine list orphan
 
 == REQUIREMENTS:
 
