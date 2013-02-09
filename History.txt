@@ -8,3 +8,11 @@
 
 * Add ability to filter results by repository and package name.
 
+=== 0.1.0 / 2012-01-10
+
+* Refactoring and version bump to reflect new features.
+
+=== 0.1.1 / 2013-02-9
+
+* Switch from HTTP to HTTPS
+
