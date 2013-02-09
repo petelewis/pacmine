@@ -16,3 +16,8 @@
 
 * Switch from HTTP to HTTPS
 
+=== 0.1.2 / 2013-02-9
+
+* Add missing dependencies
+* Enable hoe-bundler plugin to manage Gemfile
+
