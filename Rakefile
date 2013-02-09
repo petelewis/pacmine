@@ -3,6 +3,8 @@
 require 'rubygems'
 require 'hoe'
 
+Hoe.plugin :bundler
+
 # Hoe.plugin :compiler
 # Hoe.plugin :compiler
 # Hoe.plugin :compiler
