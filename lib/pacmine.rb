@@ -16,7 +16,7 @@ def get_package_list maintainer, file=nil
     end
   else
     begin
-      doc = open("http://www.archlinux.org/packages/?sort=&q=&maintainer=#{maintainer}&limit=9999") { |f| Hpricot(f) }
+      doc = open("https://www.archlinux.org/packages/?sort=&q=&maintainer=#{maintainer}&limit=9999") { |f| Hpricot(f) }
     rescue
       warn "There was a problem querying www.archlinux.org for the package list."
       exit 1
