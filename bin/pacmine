@@ -3,8 +3,8 @@
 require 'commander/import'
 require 'pacmine'
 
-# For rubygems
-VERSION = '0.1.1'
+# For hoe/rubygems
+VERSION = '0.1.2'
 
 # For commander
 program :version, VERSION
