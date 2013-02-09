@@ -4,10 +4,10 @@ require 'commander/import'
 require 'pacmine'
 
 # For rubygems
-VERSION = '0.0.2'
+VERSION = '0.1.1'
 
 # For commander
-program :version, '0.0.2'
+program :version, VERSION
 program :description, "A tool to get a list of someone's packages from archlinux.org"
 
 # Default to the intro / help page
