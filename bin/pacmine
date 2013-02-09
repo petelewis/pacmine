@@ -4,7 +4,7 @@ require 'commander/import'
 require 'pacmine'
 
 # For hoe/rubygems
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 
 # For commander
 program :version, VERSION

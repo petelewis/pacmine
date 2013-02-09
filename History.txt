@@ -21,3 +21,7 @@
 * Add missing dependencies
 * Enable hoe-bundler plugin to manage Gemfile
 
+=== 0.1.3 / 2013-02-9
+
+* 0.1.2 release got confused.
+
